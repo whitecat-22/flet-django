@@ -2,9 +2,24 @@ import flet as ft
 import requests
 
 input_form = ft.TextField(hint_text='give some text')
+screen_mode = ft.Icon(ft.icons.TRIP_ORIGIN_ROUNDED),
 
 def main(page: ft.Page):
     page.title = "Flet example app, API with Django REST Framework"
+    page.theme_mode = "light"
+
+    def toggle_icon(e):
+        page.theme_mode = "light" if page.theme_mode == "dark" else "dark"
+        toggle_dark_light_icon.selected = not toggle_dark_light_icon.selected
+        page.update()
+
+    toggle_dark_light_icon = ft.IconButton(
+        icon="light_mode",
+        selected_icon = "dark_mode",
+        tooltip=f"switch light / dark mode",
+        on_click=toggle_icon,
+    )
+
 
     def get(e):
         r = requests.get("http://127.0.0.1:8000/").json()
@@ -18,6 +33,7 @@ def main(page: ft.Page):
 
     page.add(
         ft.Column(controls=[
+            toggle_dark_light_icon,
             input_form,
             ft.FloatingActionButton(text='get', on_click=get),
             ft.FloatingActionButton(text='post', on_click=post),
