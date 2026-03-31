@@ -28,7 +28,7 @@ plumbum==1.8.2
 prompt-toolkit==3.0.36
 pydantic==2.4.2
 pydantic_core==2.10.1
-Pygments==2.16.1
+Pygments==2.20.0
 pypng==0.20220715.0
 pytz==2023.3.post1
 pywin32==306
