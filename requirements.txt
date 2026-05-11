@@ -44,7 +44,7 @@ sqlparse==0.5.4
 typing_extensions==4.8.0
 tzdata==2023.3
 uritemplate==4.1.1
-urllib3==2.6.3
+urllib3==2.7.0
 watchdog==3.0.0
 wcwidth==0.2.8
 websocket-client==1.6.4
